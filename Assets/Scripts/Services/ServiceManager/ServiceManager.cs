@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Services.LevelData;
 using Services.Saves;
 using Services.Scenes;
 using Services.Sounds;
@@ -15,6 +16,7 @@ public class ServiceManager: MonoBehaviour {
     [Inject] SoundService soundService;
     [Inject] VibrationService vibrationService;
     [Inject] SaveService saveService;
+    [Inject] LevelDataService levelDataService;
 
     Log log;
     List<AppLifecycleListener> appLifecycleListeners;
@@ -34,6 +36,7 @@ public class ServiceManager: MonoBehaviour {
         registerService(soundService);
         registerService(vibrationService);
         registerService(saveService);
+        registerService(levelDataService);
     }
 
     void registerService(Service service) {

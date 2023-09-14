@@ -1,4 +1,5 @@
 ﻿using Services;
+using Services.LevelData;
 using Services.Saves;
 using Services.Scenes;
 using Services.ServiceManager;
@@ -25,6 +26,7 @@ public class ServiceInstaller : MonoInstaller {
         bind<SoundService>();
         bind<VibrationService>();
         bind<SaveService, SimpleSaveService>();
+        bind<LevelDataService, GeneratedLevelDataService>();
         // service manager
         bind(serviceManager);
     }
