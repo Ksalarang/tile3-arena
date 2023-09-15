@@ -20,7 +20,6 @@ public abstract class Unit : MonoBehaviour, Colorable {
     [Inject] protected UnitAnimationSettings animationSettings;
     [Inject] protected EventBus<GameEvent> eventBus;
     [Inject] protected Log log;
-    [Inject] UnitAnimatorFactory animatorFactory;
 
     GameObject secondLevelStar;
     GameObject thirdLevelStar1;
@@ -60,7 +59,7 @@ public abstract class Unit : MonoBehaviour, Colorable {
         secondLevelStar = transform.Find("SecondLevelStar").gameObject;
         thirdLevelStar1 = transform.Find("ThirdLevelStar1").gameObject;
         thirdLevelStar2 = transform.Find("ThirdLevelStar2").gameObject;
-        label = transform.Find("Canvas/Image/Label").GetComponent<TMP_Text>();
+        label = transform.Find("Canvas/Background/Label").GetComponent<TMP_Text>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
@@ -68,6 +67,7 @@ public abstract class Unit : MonoBehaviour, Colorable {
         animationContainer = new GameObject("animationContainer");
         animationContainer.transform.SetParent(transform);
         stats = createUnitStats();
+        unitAnimator = new UnitAnimator();
         awake();
     }
 
@@ -267,8 +267,6 @@ public abstract class Unit : MonoBehaviour, Colorable {
         }
         level++;
         setStats(defaultStats);
-        var armyType = isPlayer ? ArmyType.Zombie : ArmyType.Alien;
-        setAnimator(animatorFactory.create(armyType, unitClass, level));
     }
 
     public override string ToString() {

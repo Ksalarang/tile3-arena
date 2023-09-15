@@ -4,6 +4,6 @@ using UnityEngine;
 namespace GameScene.Settings {
 [Serializable]
 public class GameControllerSettings {
-    public bool testMode;
+    [HideInInspector] public bool testMode;
 }
 }

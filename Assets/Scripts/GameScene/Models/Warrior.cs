@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utils.Extensions;
 
 namespace GameScene.Models {
 public class Warrior : Unit {
@@ -13,10 +14,10 @@ public class Warrior : Unit {
     protected override void attackTarget() {
         log.log($"attacks {target}", this);
         target.takeDamage(stats.damage);
-        // var angle = transform.angleDegrees(target.transform);
-        // rotateAround.startRotation(angle, isPlayer, () => {
-            // target.takeDamage(stats.damage);
-        // });
+        var angle = transform.angleDegrees(target.transform);
+        rotateAround.startRotation(angle, isPlayer, () => {
+            target.takeDamage(stats.damage);
+        });
     }
 }
 }

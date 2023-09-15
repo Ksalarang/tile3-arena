@@ -43,14 +43,14 @@ public class ArenaView : MonoBehaviour, UnitMeasureProvider, ArenaBordersProvide
     }
 
     Vector2 getArenaBottomLeft() {
-        var leftWall = getWallWorldRect("wall_left");
-        var bottomWall = getWallWorldRect("wall_down");
+        var leftWall = getWallWorldRect("LeftWall");
+        var bottomWall = getWallWorldRect("BottomWall");
         return new Vector2(leftWall.xMax, bottomWall.yMax);
     }
 
     Vector2 getArenaTopRight() {
-        var rightWall = getWallWorldRect("wall_right");
-        var topWall = getWallWorldRect("wall_up");
+        var rightWall = getWallWorldRect("RightWall");
+        var topWall = getWallWorldRect("TopWall");
         return new Vector2(rightWall.xMin, topWall.yMin);
     }
 

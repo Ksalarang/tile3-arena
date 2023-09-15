@@ -52,7 +52,7 @@ public class Shell : Projectile {
                 enemy.takeDamage(collateralDamage);
             }
         }
-        explode();
+        // explode();
         destroyItself();
     }
 

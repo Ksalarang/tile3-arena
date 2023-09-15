@@ -2,14 +2,16 @@
 
 namespace GameScene.Models {
 public class UnitAnimator {
-    const string LayerName = "Base Layer.";
-
+    readonly bool enabled;
+    
     public readonly Animator animator;
     public readonly AnimationHashes hashes = new();
 
     public float skeletonHeight { get; private set; }
 
-    public UnitAnimator(Animator animator) {
+    public UnitAnimator(Animator animator = null) {
+        enabled = animator != null;
+        if (!enabled) return;
         this.animator = animator;
         skeletonHeight = computeHeight();
     }
@@ -31,27 +33,31 @@ public class UnitAnimator {
     }
 
     public void playAnimation(int animationHash, float normalizedTime = 0f) {
+        if (!enabled) return;
         animator.Play(animationHash, 0, normalizedTime);
     }
 
     public void triggerAnimation(int animationHash, float speed = 1f) {
+        if (!enabled) return;
         animator.speed = speed;
         animator.SetTrigger(animationHash);
     }
 
     public void triggerAnimationOnce(int animationHash) {
+        if (!enabled) return;
         if (animationHash == getCurrentAnimationHash()) return;
         triggerAnimation(animationHash);
     }
 
     public float getAnimationDuration(string animationName) {
+        if (!enabled) return 0f;
         foreach (var clip in animator.runtimeAnimatorController.animationClips) {
             if (clip.name == animationName) return clip.length;
         }
         return 0f;
     }
 
-    public bool isCurrent(int animationHash) => animationHash == getCurrentAnimationHash();
+    public bool isCurrent(int animationHash) => enabled && animationHash == getCurrentAnimationHash();
 
     int getCurrentAnimationHash() => animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
 

@@ -10,6 +10,7 @@ namespace GameScene.Views {
 public class MergeLineView : MonoBehaviour {
     [field: SerializeField] public int cellCount { get; private set; }
     [SerializeField] float distanceBetweenCells;
+    
     [Inject(Id = PrefabId.UnitCell)] GameObject unitCellPrefab;
     [Inject(Id = ViewId.SpawnArea)] Image spawnArea;
     [Inject(Id = ViewId.MergeArea)] Image mergeArea;

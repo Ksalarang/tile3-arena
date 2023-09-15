@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour, VictoryWindow.Manager, DefeatWindow
         if (e.result == BattleResult.Win) {
             victoryWindow.animateShow();
         } else {
-            defeatWindow.animateHide();
+            defeatWindow.animateShow();
         }
     }
     #endregion
