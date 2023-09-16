@@ -13,6 +13,7 @@ public class Artillery : Unit {
     Projectile getProjectile() {
         var projectile = projectileFactory.create(unitClass, isPlayer);
         projectile.transform.position = transform.position;
+        projectile.color = defaultColor;
         return projectile;
     }
 }

@@ -267,6 +267,7 @@ public abstract class Unit : MonoBehaviour, Colorable {
         }
         level++;
         setStats(defaultStats);
+        updateStarVisibility();
     }
 
     public override string ToString() {

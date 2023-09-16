@@ -21,7 +21,7 @@ public class ProjectileFactory : MonoBehaviour {
     // ReSharper disable Unity.PerformanceAnalysis
     public Projectile create(UnitClass unitClass, bool isPlayer = true) {
         var projectile = diContainer.InstantiatePrefabForComponent<Projectile>(getPrefab(unitClass));
-        setSprite(projectile, unitClass, isPlayer);
+        // setSprite(projectile, unitClass, isPlayer);
         var stats = getStats(unitClass).clone();
         projectile.setStats(stats);
         return projectile;
