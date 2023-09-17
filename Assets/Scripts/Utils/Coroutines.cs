@@ -100,6 +100,18 @@ public static class Coroutines {
         action?.Invoke();
     }
 
+    public static IEnumerator colorTo(Colorable colorable, Color end, float duration, Action action = null) {
+        duration = Mathf.Max(MinDuration, duration);
+        var start = colorable.color;
+        var time = 0f;
+        while (time < duration) {
+            time += Time.deltaTime;
+            colorable.color = Color.Lerp(start, end, time / duration);
+            yield return null;
+        }
+        action?.Invoke();
+    }
+
     public static IEnumerator rotateAroundYAxis(Transform transform, bool left, float angle, float duration, Action action = null) {
         duration = Mathf.Max(MinDuration, duration);
         var start = transform.eulerAngles.y;

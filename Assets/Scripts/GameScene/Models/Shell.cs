@@ -52,16 +52,15 @@ public class Shell : Projectile {
                 enemy.takeDamage(collateralDamage);
             }
         }
-        // explode();
+        explode();
         destroyItself();
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
     void explode() {
-        var explosion = Instantiate(explosionPrefab).GetComponent<Animator>();
+        var explosion = Instantiate(explosionPrefab).GetComponent<Explosion>();
         explosion.transform.position = transform.position;
-        var delay = explosion.GetCurrentAnimatorStateInfo(0).length;
-        Destroy(explosion.gameObject, delay);
+        explosion.start();
     }
 }
 }

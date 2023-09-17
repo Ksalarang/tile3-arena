@@ -1372,7 +1372,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 947513668815949783, guid: 9d9b7ccd64c83a040b4509024db6aa1f, type: 3}
   shellPrefab: {fileID: 1481748336698092182, guid: 599c56c3887b19648919b876fcd92f29, type: 3}
   cellPrefab: {fileID: 0}
-  explosion: {fileID: 0}
+  explosion: {fileID: 3556754393884048765, guid: e19b5a7636f3e034ca9de695f38770d3, type: 3}
 --- !u!1 &436015058
 GameObject:
   m_ObjectHideFlags: 0

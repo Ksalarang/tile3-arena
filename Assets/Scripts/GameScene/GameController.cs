@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour, VictoryWindow.Manager, DefeatWindow
         eventBus.subscribe<ArenaEvent.FinishPlacingUnits>(e => onFinishPlacingUnits());
         eventBus.subscribe<BattleEvent.BattleEnded>(e => onBattleEnd(e as BattleEvent.BattleEnded));
         Application.targetFrameRate = 60;
+        // Time.timeScale = 0.5f;
     }
 
     void Start() {
