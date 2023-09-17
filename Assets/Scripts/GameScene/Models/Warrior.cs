@@ -11,8 +11,8 @@ public class Warrior : Unit {
     }
 
     protected override void attackTarget() {
-        log.log($"attacks {target}", this);
         var angle = transform.angleDegrees(target.transform);
+        log.log($"attacks {target}, angle {angle}", this);
         rotateAround.startRotation(angle, isPlayer, () => {
             target.takeDamage(stats.damage);
         });

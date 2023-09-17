@@ -5,7 +5,6 @@ using GameScene.Settings;
 using GameScene.Views;
 using GameScene.Windows;
 using UnityEngine;
-using UnityEngine.UI;
 using Utils;
 using Zenject;
 

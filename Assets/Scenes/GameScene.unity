@@ -2944,7 +2944,7 @@ MonoBehaviour:
     mergeLineController: 0
     arenaController: 0
     battleController: 0
-    unit: 0
+    unit: 1
 --- !u!4 &1086312920
 Transform:
   m_ObjectHideFlags: 0

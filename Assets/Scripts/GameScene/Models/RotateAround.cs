@@ -15,7 +15,7 @@ public class RotateAround : MonoBehaviour {
 
     public void startRotation(float angle, bool clockWise, Action action = null) {
         this.action = action;
-        this.angle = clockWise ? -angle : angle + 180f;
+        this.angle = clockWise ? -angle : -(angle + 180f);
         speedDegrees = clockWise ? Mathf.Abs(speedDegrees) : -Mathf.Abs(speedDegrees);
         progress = 0f;
         trailRenderer.enabled = true;
