@@ -11,12 +11,12 @@ public class MergeLineView : MonoBehaviour {
     [field: SerializeField] public int cellCount { get; private set; }
     [SerializeField] float distanceBetweenCells;
     
-    [Inject(Id = PrefabId.UnitCell)] GameObject unitCellPrefab;
     [Inject(Id = ViewId.SpawnArea)] Image spawnArea;
     [Inject(Id = ViewId.MergeArea)] Image mergeArea;
     [Inject] new Camera camera;
     [Inject] CanvasController canvasController;
     
+    GameObject unitCellPrefab;
     List<GameObject> unitCells;
     List<Rect> unitCellRects;
     GameObject cellContainer;

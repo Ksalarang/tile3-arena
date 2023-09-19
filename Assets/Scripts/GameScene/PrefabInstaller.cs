@@ -13,7 +13,6 @@ public class PrefabInstaller : MonoInstaller {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject shellPrefab;
     [Header("Misc")]
-    [SerializeField] GameObject cellPrefab;
     [SerializeField] GameObject explosion;
 
     public override void InstallBindings() {
@@ -25,7 +24,6 @@ public class PrefabInstaller : MonoInstaller {
         bind(bulletPrefab, PrefabId.Bullet);
         bind(shellPrefab, PrefabId.Shell);
         // misc
-        bind(cellPrefab, PrefabId.UnitCell);
         bind(explosion, PrefabId.Explosion);
     }
     
