@@ -43,7 +43,7 @@ public class ActionPointsController : MonoBehaviour {
     }
 
     void updateLabel() {
-        actionPointsLabel.SetText($"Remaining attempts: {actionPoints}");
+        actionPointsLabel.SetText($"Action points: {actionPoints}");
     }
 }
 

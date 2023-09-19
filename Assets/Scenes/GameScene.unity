@@ -1371,7 +1371,6 @@ MonoBehaviour:
   artilleryPrefab: {fileID: 1843617447002834942, guid: 2aeb57cabb548ba4db26ec6435da63bc, type: 3}
   bulletPrefab: {fileID: 947513668815949783, guid: 9d9b7ccd64c83a040b4509024db6aa1f, type: 3}
   shellPrefab: {fileID: 1481748336698092182, guid: 599c56c3887b19648919b876fcd92f29, type: 3}
-  cellPrefab: {fileID: 0}
   explosion: {fileID: 3556754393884048765, guid: e19b5a7636f3e034ca9de695f38770d3, type: 3}
 --- !u!1 &436015058
 GameObject:
@@ -4161,7 +4160,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Action points: 10'
+  m_text: 'Action points: 5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
